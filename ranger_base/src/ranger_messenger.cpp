@@ -254,8 +254,40 @@ void RangerROSMessenger::PublishStateToROS() {
     //                 actuator_state.motor_speeds.speed_3,
     //                 actuator_state.motor_speeds.speed_4);
 
+    RCLCPP_DEBUG(
+      node_->get_logger(),
+      "feedback Angle_5:%f Angle_6:%f Angle_7:%f Angle_8:%f",
+      actuator_state.motor_angles.angle_5,
+      actuator_state.motor_angles.angle_6,
+      actuator_state.motor_angles.angle_7,
+      actuator_state.motor_angles.angle_8
+    );
+    
+    RCLCPP_DEBUG(
+      node_->get_logger(),
+      "feedback speed_1:%f speed_2:%f speed_3:%f speed_4:%f",
+      actuator_state.motor_speeds.speed_1,
+      actuator_state.motor_speeds.speed_2,
+      actuator_state.motor_speeds.speed_3,
+      actuator_state.motor_speeds.speed_4
+    );
+
+
     ranger_msgs::msg::ActuatorStateArray actuator_msg;
     actuator_msg.header.stamp = current_time_;
+    
+    // Copy motor angles individually
+    actuator_msg.motor_angles.angle_5 = actuator_state.motor_angles.angle_5;
+    actuator_msg.motor_angles.angle_6 = actuator_state.motor_angles.angle_6;
+    actuator_msg.motor_angles.angle_7 = actuator_state.motor_angles.angle_7;
+    actuator_msg.motor_angles.angle_8 = actuator_state.motor_angles.angle_8;
+    
+    // Copy motor speeds individually  
+    actuator_msg.motor_speeds.speed_1 = actuator_state.motor_speeds.speed_1;
+    actuator_msg.motor_speeds.speed_2 = actuator_state.motor_speeds.speed_2;
+    actuator_msg.motor_speeds.speed_3 = actuator_state.motor_speeds.speed_3;
+    actuator_msg.motor_speeds.speed_4 = actuator_state.motor_speeds.speed_4;
+    
     for (int i = 0; i < 8; i++) {
       ranger_msgs::msg::DriverState driver_state_msg;
       driver_state_msg.driver_voltage =

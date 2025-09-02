@@ -41,39 +41,6 @@
         <axis rpy="0 0 0" xyz="0 1 0"/>
     </joint>
 
-    <!-- Front Left Wheel -->
-    <link name="fl_steering_wheel_link">
-        <inertial>
-            <origin xyz="0.0 0.0 0.0"/>
-            <mass value="1"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
-    </link>
-
-    <joint name="fl_steering_joint" type="revolute">
-        <origin rpy="0 0 0" xyz="0.25 0.19 -0.1"/>
-        <parent link="base_link"/>
-        <child link="fl_steering_wheel_link"/>
-        <axis rpy="0 0 0" xyz="0 0 -1"/>
-        <limit effort="5" lower="-2.1" upper="2.1" velocity="6.28"/>
-        <dynamics damping="5.0" friction="0.5"/>
-    </joint>
-
-    <link name="fl_wheel_link">
-        <inertial>
-            <mass value="8"/>
-            <origin xyz="0 0 0"/>
-            <inertia ixx="0.02047" ixy="0.0" ixz="0.0" iyy="0.02047" iyz="0.0" izz="0.0324"/>
-        </inertial>
-    </link>
-
-    <joint name="fl_wheel" type="continuous">
-        <origin rpy="0 0 0" xyz="0.0 0.0 -0.12"/>
-        <parent link="fl_steering_wheel_link"/>
-        <child link="fl_wheel_link"/>
-        <axis rpy="0 0 0" xyz="0 1 0"/>
-    </joint>
-
     <!-- Rear Right Wheel -->
     <link name="rr_steering_wheel_link">
         <inertial>
@@ -139,5 +106,41 @@
         <child link="rl_wheel_link"/>
         <axis rpy="0 0 0" xyz="0 1 0"/>
     </joint>
+
+
+
+    <!-- Front Left Wheel -->
+    <link name="fl_steering_wheel_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0"/>
+            <mass value="1"/>
+            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+        </inertial>
+    </link>
+
+    <joint name="fl_steering_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0.25 0.19 -0.1"/>
+        <parent link="base_link"/>
+        <child link="fl_steering_wheel_link"/>
+        <axis rpy="0 0 0" xyz="0 0 -1"/>
+        <limit effort="5" lower="-2.1" upper="2.1" velocity="6.28"/>
+        <dynamics damping="5.0" friction="0.5"/>
+    </joint>
+
+    <link name="fl_wheel_link">
+        <inertial>
+            <mass value="8"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.02047" ixy="0.0" ixz="0.0" iyy="0.02047" iyz="0.0" izz="0.0324"/>
+        </inertial>
+    </link>
+
+    <joint name="fl_wheel" type="continuous">
+        <origin rpy="0 0 0" xyz="0.0 0.0 -0.12"/>
+        <parent link="fl_steering_wheel_link"/>
+        <child link="fl_wheel_link"/>
+        <axis rpy="0 0 0" xyz="0 1 0"/>
+    </joint>
+
 
 </robot>

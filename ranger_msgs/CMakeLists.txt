@@ -22,6 +22,8 @@ set(msg_file
 "msg/DriverState.msg"
 "msg/MotionState.msg"
 "msg/MotorState.msg"
+"msg/MotorAngleMessage.msg"
+"msg/MotorSpeedMessage.msg"
 "msg/SystemState.msg"
 "msg/RCState.msg"
 )
