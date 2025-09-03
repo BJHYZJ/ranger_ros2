@@ -65,7 +65,7 @@ def generate_launch_description():
 
     # Custom joint state publisher for ranger
     joint_state_publisher_node = Node(
-        package='ranger_description',
+        package='ranger_base',
         executable='ranger_joint_state_publisher',
         name='ranger_joint_state_publisher',
         output='screen',

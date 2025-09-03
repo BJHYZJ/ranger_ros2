@@ -41,6 +41,15 @@ def generate_launch_description():
         }],
     )
 
+
+    joint_state_publisher_node = Node(
+        package='ranger_base',
+        executable='ranger_joint_state_publisher',
+        name='ranger_joint_state_publisher',
+        output='screen',
+    )
+
     return LaunchDescription(declare_args + [
         ranger_base_node, 
+        joint_state_publisher_node
     ])

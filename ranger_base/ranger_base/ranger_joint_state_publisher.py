@@ -11,7 +11,7 @@ class RangerJointStatePublisher(Node):
         super().__init__('ranger_joint_state_publisher')
         
         # Publisher for joint states
-        self.joint_state_pub = self.create_publisher(JointState, 'joint_states', 10)
+        self.joint_state_pub = self.create_publisher(JointState, 'ranger/joint_states', 10)
         
         # Subscriber for actuator data
         self.actuator_sub = self.create_subscription(

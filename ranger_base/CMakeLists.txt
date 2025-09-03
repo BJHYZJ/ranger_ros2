@@ -16,7 +16,9 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
@@ -44,6 +46,16 @@ install(TARGETS ranger_base_node
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}/)
+
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+
+# Install Python executables to the correct location
+install(PROGRAMS
+  ${CMAKE_CURRENT_SOURCE_DIR}/ranger_base/ranger_joint_state_publisher.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME ranger_joint_state_publisher
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
