@@ -53,10 +53,11 @@ def generate_launch_description():
         'cat ', str(ranger_description_path / 'urdf' / 'ranger_mini3_v3.urdf')
     ])
 
-    # Robot state publisher
+    # Robot state publisher (for ranger only)
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
+        name='ranger_robot_state_publisher',  # 明确的名字避免与 xarm 冲突
         output='both',
         parameters=[{'robot_description': robot_description_content,
                      'publish_frequency': 15.0}]

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot name="ranger_with_xarm6">
+<robot name="ranger_mini_v3">
     <link name="base_link">
         <inertial>
             <origin rpy="0 0 0" xyz="-0.0242698272228022 -0.0030308024613212 0.0544267444673498"/>
