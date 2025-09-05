@@ -13,7 +13,7 @@ def generate_launch_description():
         DeclareLaunchArgument("base_frame", default_value="base_link"),
         DeclareLaunchArgument("update_rate", default_value="50"),
         DeclareLaunchArgument("odom_topic_name", default_value="odom"),
-        DeclareLaunchArgument("publish_odom_tf", default_value="true"),
+        DeclareLaunchArgument("publish_odom_tf", default_value="false"),
     ]
 
     port_name = LaunchConfiguration("port_name")
