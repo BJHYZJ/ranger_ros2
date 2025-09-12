@@ -94,15 +94,15 @@ $ colcon build --symlink-install
 
 ### Published topics
 
-* /system_state (ranger_msgs::SystemState)
-* /motion_state (ranger_msgs::MotionState)
-* /actuator_state (ranger_msgs::ActuatorStateArray)
-* /odom (nav_msgs::Odometry)
-* /battery_state (sensor_msgs::BatteryState)
+* /ranger/system_state (ranger_msgs::SystemState)
+* /ranger/motion_state (ranger_msgs::MotionState)
+* /ranger/actuator_state (ranger_msgs::ActuatorStateArray)
+* /ranger/odom (nav_msgs::Odometry)
+* /ranger/battery_state (sensor_msgs::BatteryState)
 
 ### Subscribed topics
 
-* /cmd_vel (geometry_msgs::Twist)
+* /ranger/cmd_vel (geometry_msgs::Twist)
 
 ### Services
 
