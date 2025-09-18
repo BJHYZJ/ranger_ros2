@@ -37,7 +37,7 @@ class RangerJointStatePublisher(Node):
         # Store latest actuator data
         self.latest_actuator_data = None
         
-        self.get_logger().info('Ranger Joint State Publisher started - simplified version')
+        self.get_logger().info('Ranger Joint State Publisher started.')
 
     def actuator_callback(self, msg):
         """Callback for actuator state - contains motor angles and speeds"""
