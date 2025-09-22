@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot name="ranger_mini_v3_simple">
     <link name="base_link">
-        <inertial>
-            <origin rpy="0 0 0" xyz="-0.0242698272228022 -0.0030308024613212 0.0544267444673498"/>
-            <mass value="10"/>
-            <inertia ixx="0.1354" ixy="0.0" ixz="0.0" iyy="0.2417" iyz="0.0" izz="0.3085"/>
-        </inertial>
     </link>
 
     <!-- Front Right Wheel -->
     <link name="fr_steering_wheel_link">
-        <inertial>
-            <origin xyz="0.0 0.0 0.0"/>
-            <mass value="1"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
     </link>
 
     <joint name="fr_steering_joint" type="revolute">
@@ -27,11 +17,6 @@
     </joint>
 
     <link name="fr_wheel_link">
-        <inertial>
-            <mass value="8"/>
-            <origin xyz="0 0 0"/>
-            <inertia ixx="0.02047" ixy="0.0" ixz="0.0" iyy="0.02047" iyz="0.0" izz="0.0324"/>
-        </inertial>
     </link>
 
     <joint name="fr_wheel" type="continuous">
@@ -43,11 +28,6 @@
 
     <!-- Rear Right Wheel -->
     <link name="rr_steering_wheel_link">
-        <inertial>
-            <origin xyz="0.0 0.0 0.0"/>
-            <mass value="1"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
     </link>
 
     <joint name="rr_steering_joint" type="revolute">
@@ -60,11 +40,6 @@
     </joint>
 
     <link name="rr_wheel_link">
-        <inertial>
-            <mass value="8"/>
-            <origin xyz="0 0 0"/>
-            <inertia ixx="0.02047" ixy="0.0" ixz="0.0" iyy="0.02047" iyz="0.0" izz="0.0324"/>
-        </inertial>
     </link>
 
     <joint name="rr_wheel" type="continuous">
@@ -76,11 +51,6 @@
 
     <!-- Rear Left Wheel -->
     <link name="rl_steering_wheel_link">
-        <inertial>
-            <origin xyz="0.0 0.0 0.0"/>
-            <mass value="1"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
     </link>
 
     <joint name="rl_steering_joint" type="revolute">
@@ -93,11 +63,6 @@
     </joint>
 
     <link name="rl_wheel_link">
-        <inertial>
-            <mass value="8"/>
-            <origin xyz="0 0 0"/>
-            <inertia ixx="0.02047" ixy="0.0" ixz="0.0" iyy="0.02047" iyz="0.0" izz="0.0324"/>
-        </inertial>
     </link>
 
     <joint name="rl_wheel" type="continuous">
@@ -111,11 +76,6 @@
 
     <!-- Front Left Wheel -->
     <link name="fl_steering_wheel_link">
-        <inertial>
-            <origin xyz="0.0 0.0 0.0"/>
-            <mass value="1"/>
-            <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
-        </inertial>
     </link>
 
     <joint name="fl_steering_joint" type="revolute">
@@ -128,11 +88,6 @@
     </joint>
 
     <link name="fl_wheel_link">
-        <inertial>
-            <mass value="8"/>
-            <origin xyz="0 0 0"/>
-            <inertia ixx="0.02047" ixy="0.0" ixz="0.0" iyy="0.02047" iyz="0.0" izz="0.0324"/>
-        </inertial>
     </link>
 
     <joint name="fl_wheel" type="continuous">

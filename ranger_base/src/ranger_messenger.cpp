@@ -145,23 +145,23 @@ void RangerROSMessenger::LoadParameters() {
 void RangerROSMessenger::SetupSubscription() {
   // publisher
   system_state_pub_ = node_->create_publisher<ranger_msgs::msg::SystemState>(
-      "/ranger/system_state", 10);
+      "/system_state", 10);
   motion_state_pub_ = node_->create_publisher<ranger_msgs::msg::MotionState>(
-      "/ranger/motion_state", 10);
+      "/motion_state", 10);
   actuator_state_pub_ =
       node_->create_publisher<ranger_msgs::msg::ActuatorStateArray>(
-          "/ranger/actuator_state", 10);
+          "/actuator_state", 10);
   odom_pub_ =
       node_->create_publisher<nav_msgs::msg::Odometry>(odom_topic_name_, 10);
   battery_state_pub_ = node_->create_publisher<sensor_msgs::msg::BatteryState>(
-      "/ranger/battery_state", 10);
+      "/battery_state", 10);
 
   rc_state_pub_ = node_->create_publisher<ranger_msgs::msg::RCState>(
-      "/ranger/rc_state", 10);
+      "/rc_state", 10);
 
   // subscriber
   motion_cmd_sub_ = node_->create_subscription<geometry_msgs::msg::Twist>(
-      "/ranger/cmd_vel", 5,
+      "/cmd_vel", 5,
       std::bind(&RangerROSMessenger::TwistCmdCallback, this,
                 std::placeholders::_1));
 
